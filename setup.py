@@ -7,8 +7,8 @@ setup(
   description = 'File editing made easy.',   # Give a short description about your library
   author = 'kr8gz',                   # Type in your name
   author_email = 'kr8gz@gmx.at',      # Type in your E-Mail
-  url = 'https://github.com/user/reponame',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
+  url = 'https://github.com/kr8gz',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/kr8gz/fileedit/archive/1.0.tar.gz',    # I explain this later on
   keywords = ['file', 'editing', 'fileedit', 'files', 'edit', 'data'],   # Keywords that define your package best
   install_requires=[],
   classifiers=[
