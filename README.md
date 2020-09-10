@@ -25,7 +25,8 @@ f.write(["if you", "pass a list", "it will write", "multiple lines"])
     
     it will write
     
-    multiple lines```
+    multiple lines
+    ```
 --------------------------------------------------------------------------------
 f.write("I am the new line 4, moving all text below me one line down", 4)
 
@@ -53,6 +54,11 @@ important_line = f.find("foo")
 --------------------------------------------------------------------------------
 f.replace("old", "new")
 * Every `"old"` that was in the file is now `"new"`.
+  If there is no occurrence of `"old"`, nothing happens.
+--------------------------------------------------------------------------------
+f.replace("old", "new", 7)
+f.replace("old", "new", line=7)
+* Every `"old"` that was in line 7 is now `"new"`.
   If there is no occurrence of `"old"`, nothing happens.
 --------------------------------------------------------------------------------
 f.clear()
