@@ -1,2 +1,2 @@
-# fileedit
+# FileEdit
 File editing made easy.
