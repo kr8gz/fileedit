@@ -1,1 +1,1 @@
-from fileedit import *
+from .fileedit import *
