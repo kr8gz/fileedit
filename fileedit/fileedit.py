@@ -245,8 +245,9 @@ class File:
             raise InvalidArgument("The string to replace with must not contain a newline")
 
         if line:
-            self.contents[line] = self.contents[line].replace(str(old), str(new))
-            f.writelines([line.strip("\n") + "\n" for line in text])
+            with open(self.name, "w") as f:
+                self.contents[line] = self.contents[line].replace(str(old), str(new))
+                f.writelines([line.strip("\n") + "\n" for line in text])
         else:
             with open(self.name, "w") as f:
                 f.writelines([line.replace(str(old), str(new)) + "\n" for line in self.contents])
