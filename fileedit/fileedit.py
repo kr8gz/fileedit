@@ -213,9 +213,27 @@ class File:
         else:
             return None
 
-    def replace(self, old, new):
+    def replace(self, old, new, *args, **kwargs):
 
         self.update_contents()
+        
+        line = None
+
+        if args or kwargs:
+            if args:
+                l = args[0]
+            elif "line" in kwargs:
+                l = kwargs['line']
+            if type(l) not in [str, int]:
+                raise InvalidArgument(f"{l} is not a valid line number")
+
+            try:
+                l = int(l)
+                if l < 1:
+                    raise InvalidArgument(f"{l} is not a valid line number")
+            except ValueError:
+                raise InvalidArgument(f"{l} is not a valid line number")
+            line = l
 
         if type(old) not in [str, int, float]:
             raise InvalidArgument(f"{type(old)} cannot be searched for")
@@ -226,8 +244,12 @@ class File:
         if "\n" in str(new):
             raise InvalidArgument("The string to replace with must not contain a newline")
 
-        with open(self.name, "w") as f:
-            f.writelines([line.replace(str(old), str(new)) + "\n" for line in self.contents])
+        if line:
+            self.contents[line] = self.contents[line].replace(str(old), str(new))
+            f.writelines([line.strip("\n") + "\n" for line in text])
+        else:
+            with open(self.name, "w") as f:
+                f.writelines([line.replace(str(old), str(new)) + "\n" for line in self.contents])
 
         self.update_contents()
 
