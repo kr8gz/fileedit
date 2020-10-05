@@ -6,6 +6,9 @@ File editing made easy.
 `f = File("test.txt")`
 * Creates a new `File` object from the file `"test.txt"`.
 --------------------------------------------------------------------------------
+`bf = ByteFile("test.docx")`
+* Creates a new `ByteFile` object from the file `"test.docx"`.
+--------------------------------------------------------------------------------
 `cont = f.contents`
 * Returns a list where one element is one line of the file.
 --------------------------------------------------------------------------------
