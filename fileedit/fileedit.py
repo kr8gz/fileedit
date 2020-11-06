@@ -28,7 +28,7 @@ anothervar = str(f)
 * This converts the whole file into a string, with each line separated by
   newlines.
 * This does the same as:
-anothervar = "\n".join(f.contents)
+anothervar = "\\n".join(f.contents)
 --------------------------------------------------------------------------------
 f.write("hello world")
 * This adds "hello world" to the end of the existing text.
